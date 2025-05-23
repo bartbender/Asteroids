@@ -41,4 +41,4 @@ Con todo mi cariño para mis sobrinos: **Dani, Lucía, Rubén y Jorge**. ¡Que l
 
 ![Captura de pantalla del juego](screenshot.png)
 
-[Ver el juego online en GitHub Pages](https://bartbender.github.io/Asteroids/)
+[Ver el juego online en GitHub Pages](https://bartbender.github.io/Asteroids/index.html)
