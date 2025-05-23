@@ -1,5 +1,4 @@
-// sound.js
-// Gestión centralizada de efectos de sonido para Asteroids
+ // sound.js - Gestión centralizada de efectos de sonido para Asteroids
 
 const sounds = {
     explosion_asteroide: new Audio('explosion_asteroide.wav'), // Al destruir un asteroide

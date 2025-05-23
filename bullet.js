@@ -1,6 +1,3 @@
-// bullet.js
-// Lógica y renderizado de los disparos
-
 class Bullet {
     constructor(x, y, angle) {
         this.x = x;

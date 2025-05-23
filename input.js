@@ -1,5 +1,4 @@
-// input.js
-// Gestión de entrada de teclado, mouse y touch
+ // input.js - Gestión de controles por teclado, ratón y touch
 
 const Input = {
     left: false,
@@ -8,8 +7,10 @@ const Input = {
     shoot: false,
     targetAngle: undefined,
     mouseDown: false,
+    accelerate: false,
     reset() {
         this.shoot = false;
+        this.accelerate = false;
     }
 };
 
@@ -23,13 +24,11 @@ window.addEventListener('keyup', e => {
     if (e.code === 'ArrowLeft') Input.left = false;
     if (e.code === 'ArrowRight') Input.right = false;
     if (e.code === 'ArrowUp') Input.up = false;
-    // Si se suelta una tecla de rotación, eliminamos el targetAngle para evitar que el mouse/touch sobrescriba el ángulo
     if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') {
         Input.targetAngle = undefined;
     }
 });
 
-// El canvas se inicializa en gameManager.js, así que aquí solo lo referenciamos cuando sea necesario
 let inputCanvas;
 function getCanvas() {
     if (!inputCanvas) inputCanvas = document.getElementById('game-canvas');
@@ -57,7 +56,6 @@ getCanvas().addEventListener('mouseup', e => {
     }
 });
 
-// Touch
 getCanvas().addEventListener('touchstart', e => {
     if (e.touches.length > 0) {
         const rect = getCanvas().getBoundingClientRect();
@@ -80,3 +78,15 @@ getCanvas().addEventListener('touchmove', e => {
 getCanvas().addEventListener('touchend', e => {
     Input.shoot = false;
 });
+
+// Botón de aceleración
+const accelerateBtn = document.getElementById('accelerate-btn');
+if (accelerateBtn) {
+    // Event listeners para el botón de aceleración
+    accelerateBtn.addEventListener('touchstart', () => {
+        Input.accelerate = true;
+    });
+    accelerateBtn.addEventListener('touchend', () => {
+        Input.accelerate = false;
+    });
+}

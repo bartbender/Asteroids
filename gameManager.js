@@ -1,5 +1,4 @@
-// gameManager.js
-// Lógica principal del juego Asteroids
+ // gameManager.js - Lógica principal del juego Asteroids
 
 let canvas, ctx, scale;
 let player, asteroids, bullets, explosions;

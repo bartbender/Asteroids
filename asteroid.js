@@ -1,6 +1,3 @@
-// asteroid.js
-// Lógica y renderizado de los asteroides
-
 class Asteroid {
     constructor(x, y, radius, level = 1) {
         this.x = x;

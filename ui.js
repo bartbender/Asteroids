@@ -1,5 +1,4 @@
-// ui.js
-// Gestión de la interfaz de usuario: vidas, puntuación, mensajes y botones
+ // ui.js - Gestión de la interfaz de usuario: vidas, puntuación, mensajes y botones
 
 const UI = {
     drawHUD(ctx, lives, score, scale) {

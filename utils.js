@@ -1,5 +1,4 @@
-// utils.js
-// Funciones utilitarias para el juego Asteroids
+ // utils.js - Funciones utilitarias para el juego Asteroids
 
 // Genera un número aleatorio entre min y max
 function randRange(min, max) {
