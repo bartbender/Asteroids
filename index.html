@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTEROIDS</title>
+    <!-- Fuente infantil de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #111;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #title {
+            width: 100vw;
+            text-align: center;
+            font-family: 'Luckiest Guy', 'Comic Sans MS', cursive, sans-serif;
+            font-size: 6vw;
+            margin: 0;
+            margin-top: 1vh;
+            letter-spacing: 0.2em;
+            user-select: none;
+            display: flex;
+            justify-content: center;
+        }
+        #game-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100vw;
+            height: 100%;
+        }
+        #game-canvas {
+            display: block;
+            background: #181c24;
+            box-shadow: 0 0 32px #000a;
+            margin: 0 auto;
+            border-radius: 12px;
+            max-width: 100vw;
+            max-height: 90vh;
+        }
+        #ui-buttons {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+            pointer-events: none;
+        }
+        .game-btn {
+            font-family: 'Luckiest Guy', 'Comic Sans MS', cursive, sans-serif;
+            font-size: 2vw;
+            background: #fff;
+            color: #222;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            box-shadow: 0 2px 8px #0005;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: background 0.2s, color 0.2s;
+        }
+        .game-btn:hover {
+            background: #ffe066;
+            color: #111;
+        }
+        #mute-container {
+            position: absolute;
+            top: 10%;
+            left: 50px;
+            transform: translateY(-50%);
+            z-index: 20;
+        }
+        @media (max-width: 600px) {
+            #title {
+                font-size: 10vw;
+            }
+            .game-btn {
+                font-size: 5vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <span style="color:#ff3b3b">A</span>
+        <span style="color:#ffb300">S</span>
+        <span style="color:#ffe066">T</span>
+        <span style="color:#4cd964">E</span>
+        <span style="color:#5ac8fa">R</span>
+        <span style="color:#007aff">O</span>
+        <span style="color:#5856d6">I</span>
+        <span style="color:#ff2d55">D</span>
+        <span style="color:#ff9500">S</span>
+    </div>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="ui-buttons">
+            <button id="start-btn" class="game-btn">Iniciar Juego</button>
+            <button id="restart-btn" class="game-btn" style="display:none;">Reiniciar</button>
+        </div>
+        <div id="mute-container">
+            <button id="mute-btn" class="game-btn">🔊 Sonido</button>
+        </div>
+    </div>
+    <!-- Scripts del juego -->
+    <script src="sound.js"></script>
+    <script src="utils.js"></script>
+    <script src="ui.js"></script>
+    <script src="player.js"></script>
+    <script src="asteroid.js"></script>
+    <script src="bullet.js"></script>
+    <script src="explosion.js"></script>
+    <script src="input.js"></script>
+    <script src="gameManager.js"></script>
+</body>
+</html>

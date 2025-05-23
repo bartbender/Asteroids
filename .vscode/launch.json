@@ -1,0 +1,21 @@
+{
+    // Configuración para depuración en VSCode usando Firefox
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "firefox",
+            "request": "launch",
+            "name": "Debug Asteroids en Firefox",
+            "url": "file://${workspaceFolder}/index.html",
+            "webRoot": "${workspaceFolder}",
+            "reAttach": true,
+            "reloadOnAttach": true,
+            "pathMappings": [
+                {
+                    "url": "file://${workspaceFolder}/",
+                    "path": "${workspaceFolder}/"
+                }
+            ]
+        }
+    ]
+}
