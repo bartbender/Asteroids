@@ -17,7 +17,7 @@ function setMuted(val) {
         sounds[key].muted = muted;
     }
     const btn = document.getElementById('mute-btn');
-    if (btn) btn.textContent = muted ? '🔇 Silenciado' : '🔊 Sonido';
+    if (btn) btn.textContent = muted ? '🔇' : '🔊';
 }
 
 window.addEventListener('DOMContentLoaded', () => {

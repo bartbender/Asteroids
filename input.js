@@ -9,8 +9,7 @@ const Input = {
     mouseDown: false,
     accelerate: false,
     reset() {
-        this.shoot = false;
-        this.accelerate = false;
+        this.shoot = false;        
     }
 };
 
@@ -87,6 +86,12 @@ if (accelerateBtn) {
         Input.accelerate = true;
     });
     accelerateBtn.addEventListener('touchend', () => {
+        Input.accelerate = false;
+    });
+    accelerateBtn.addEventListener('mousedown', () => {
+        Input.accelerate = true;
+    });
+    accelerateBtn.addEventListener('mouseup', () => {
         Input.accelerate = false;
     });
 }

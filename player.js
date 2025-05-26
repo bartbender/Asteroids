@@ -54,9 +54,14 @@ class Player {
         }
 
         // Aceleración
-        if (input.up || input.accelerate) {
+        if (input.up) {
             this.vel.x += Math.cos(this.angle) * 0.01 * dt;
             this.vel.y += Math.sin(this.angle) * 0.01 * dt;
+        }
+        if( input.accelerate)
+        {
+            this.vel.x += Math.cos(this.angle) * 0.01 * dt;
+            this.vel.y += Math.sin(this.angle) * 0.01 * dt;            
         }
         // Movimiento
         this.x += this.vel.x * dt / 16;
