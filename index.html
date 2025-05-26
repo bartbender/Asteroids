@@ -30,8 +30,7 @@
             user-select: none;
             display: flex;
             justify-content: center;
-        }
-        #game-container {
+        }        #game-container {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -39,6 +38,7 @@
             justify-content: flex-start;
             width: 100vw;
             height: 100%;
+            position: relative;
         }
         #game-canvas {
             display: block;
@@ -77,12 +77,12 @@
         .game-btn:hover {
             background: #ffe066;
             color: #111;
-        }
-        #mute-container {
+        }        #mute-container {
             position: absolute;
-            top: 10%;
-            left: 50px;
-            transform: translateY(-50%);
+            top: 0;
+            right: 0;
+            transform: translateY(-100%);
+            margin-top: -10px;
             z-index: 20;
         }
         @media (max-width: 600px) {
@@ -92,6 +92,14 @@
             .game-btn {
                 font-size: 5vw;
             }
+        }
+        /* Pc55f */
+        #accelerate-btn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
         }
     </style>
 </head>
@@ -111,10 +119,12 @@
         <canvas id="game-canvas"></canvas>
         <div id="ui-buttons">
             <button id="start-btn" class="game-btn">Iniciar Juego</button>
-            <button id="restart-btn" class="game-btn" style="display:none;">Reiniciar</button>
+            <button id="restart-btn" class="game-btn" style="display:none;">Reiniciar</button>        </div>        <div id="mute-container">
+            <button id="mute-btn" class="game-btn" title="Sonido">🔊</button>
         </div>
-        <div id="mute-container">
-            <button id="mute-btn" class="game-btn">🔊 Sonido</button>
+        <!-- P3c92 -->
+        <div id="accelerate-btn">
+            <button class="game-btn" title="Acelerar">🚀</button>
         </div>
     </div>
     <!-- Scripts del juego -->

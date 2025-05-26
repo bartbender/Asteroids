@@ -1,5 +1,4 @@
-// sound.js
-// Gestión centralizada de efectos de sonido para Asteroids
+ // sound.js - Gestión centralizada de efectos de sonido para Asteroids
 
 const sounds = {
     explosion_asteroide: new Audio('explosion_asteroide.wav'), // Al destruir un asteroide
@@ -18,7 +17,7 @@ function setMuted(val) {
         sounds[key].muted = muted;
     }
     const btn = document.getElementById('mute-btn');
-    if (btn) btn.textContent = muted ? '🔇 Silenciado' : '🔊 Sonido';
+    if (btn) btn.textContent = muted ? '🔇' : '🔊';
 }
 
 window.addEventListener('DOMContentLoaded', () => {

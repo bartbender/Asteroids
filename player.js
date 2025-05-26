@@ -1,5 +1,4 @@
-// player.js
-// Lógica y renderizado de la nave del jugador
+ // player.js - Lógica y renderizado de la nave del jugador
 
 class Player {
     constructor() {
@@ -58,6 +57,11 @@ class Player {
         if (input.up) {
             this.vel.x += Math.cos(this.angle) * 0.01 * dt;
             this.vel.y += Math.sin(this.angle) * 0.01 * dt;
+        }
+        if( input.accelerate)
+        {
+            this.vel.x += Math.cos(this.angle) * 0.01 * dt;
+            this.vel.y += Math.sin(this.angle) * 0.01 * dt;            
         }
         // Movimiento
         this.x += this.vel.x * dt / 16;

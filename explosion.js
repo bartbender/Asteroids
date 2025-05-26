@@ -1,5 +1,4 @@
-// explosion.js
-// Animación de explosión vectorial
+ // explosion.js - Animación de explosión vectorial
 
 class Explosion {
     constructor(x, y) {
